@@ -1,0 +1,26 @@
+name: Pixeebot Fix
+
+on:
+  check_run:
+    types: [ completed ]
+
+permissions:
+  id-token: write
+
+jobs:
+  pixeebot-fix:
+    name: Pixeebot Fix
+    if: ${{ !contains(github.actor, 'bot') && toJson(github.event.check_run.pull_requests) != '[]' && github.event.check_run.name == 'SonarCloud Code Analysis' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+
+    steps:
+      - name: Upload file and trigger analysis
+        uses: JesusCotlamee/upload-tool-results-action@bfa4933ddeb194a58e2bde62d62eacd66747cb1c
+        with:
+          tool: 'sonar'
+      - name: Analysis sha
+        shell: bash
+        run: |
+          ANALYSIS_SHA=${{ github.event.check_run.head_sha }}
+          echo "$ANALYSIS_SHA"

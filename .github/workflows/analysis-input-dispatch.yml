@@ -1,0 +1,36 @@
+name: Pixeebot Fix Workflow Dispatch
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr-number:
+        description: Pull request number
+        required: true
+        type: number
+      file:
+        description: File that will be sent
+        default: pixeebot-fix-files/sonar.json
+        required: true
+        type: string
+
+permissions:
+  id-token: write
+
+jobs:
+  pixeebot-fix:
+    name: Pixeebot Fix Workflow Dispatch
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+
+    steps:
+      - name: Upload file and trigger analysis
+        uses: JesusCotlamee/upload-tool-results-action@bfa4933ddeb194a58e2bde62d62eacd66747cb1c
+        with:
+          tool: 'sonar'
+          pr-number: ${{ github.event.inputs.pr-number }}
+          file: ${{ github.event.inputs.file }}
+      - name: Analysis sha
+        shell: bash
+        run: |
+          ANALYSIS_SHA=${{ github.event.check_run.head_sha }}
+          echo "$ANALYSIS_SHA"
