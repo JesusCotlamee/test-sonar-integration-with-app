@@ -23,6 +23,7 @@ jobs:
     timeout-minutes: 6
 
     steps:
+      - uses: actions/checkout@v4
       - name: Upload file and trigger analysis
         uses: JesusCotlamee/upload-tool-results-action@bd33b4e487a8f329a2610102e95dc4b9ba083bc2
         with:
