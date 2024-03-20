@@ -24,11 +24,13 @@ jobs:
 
     steps:
       - name: Upload file and trigger analysis
-        uses: JesusCotlamee/upload-tool-results-action@1ab75e1d2d0eccc58cebdb02554783a109842a93
+        uses: JesusCotlamee/upload-tool-results-action@f63f09e2f8e6f41f1135f669385c67ea4d5b6138
         with:
           tool: 'sonar'
           pr-number: ${{ github.event.inputs.pr-number }}
           file: ${{ github.event.inputs.file }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Analysis sha
         shell: bash
         run: |
