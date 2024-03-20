@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Upload file and trigger analysis
-        uses: JesusCotlamee/upload-tool-results-action@07a17fdddc0f32b784e5fe28bae122022dbc74c9
+        uses: JesusCotlamee/upload-tool-results-action@1ab75e1d2d0eccc58cebdb02554783a109842a93
         with:
           tool: 'sonar'
       - name: Analysis sha
