@@ -9,7 +9,7 @@ on:
         type: number
       file:
         description: File that will be sent
-        default: pixeebot-fix-files/sonar.json
+        default: pixeebot-fix-files/sonar
         required: true
         type: string
 
@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Upload file and trigger analysis
-        uses: JesusCotlamee/upload-tool-results-action@e23c6b90896a6eac35497bfd59efeba5cc8010fb
+        uses: JesusCotlamee/upload-tool-results-action@d0a79467e1e81620f4203bae5efe1bf70f0f6f57
         with:
           tool: 'sonar'
           pr-number: ${{ github.event.inputs.pr-number }}
