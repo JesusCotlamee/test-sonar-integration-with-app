@@ -7,6 +7,7 @@ on:
 permissions:
   id-token: write
 
+
 jobs:
   pixeebot-fix:
     name: Pixeebot Fix
@@ -16,7 +17,7 @@ jobs:
 
     steps:
       - name: Upload file and trigger analysis
-        uses: JesusCotlamee/upload-tool-results-action@07a17fdddc0f32b784e5fe28bae122022dbc74c9
+        uses: JesusCotlamee/upload-tool-results-action@d0a79467e1e81620f4203bae5efe1bf70f0f6f57
         with:
           tool: 'sonar'
       - name: Analysis sha
