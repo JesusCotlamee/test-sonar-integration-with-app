@@ -16,12 +16,8 @@ jobs:
     timeout-minutes: 6
 
     steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Upload file and trigger analysis
-        uses: JesusCotlamee/upload-tool-results-action@d0a79467e1e81620f4203bae5efe1bf70f0f6f57
+        uses: JesusCotlamee/upload-tool-results-action@bd2b40630407fcf85e024cc8f0a874f56474049c
         with:
           tool: 'sonar'
-      - name: Analysis sha
-        shell: bash
-        run: |
-          ANALYSIS_SHA=${{ github.event.check_run.head_sha }}
-          echo "$ANALYSIS_SHA"
