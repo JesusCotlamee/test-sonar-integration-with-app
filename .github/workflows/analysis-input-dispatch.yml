@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Upload file and trigger analysis
-        uses: JesusCotlamee/upload-tool-results-action@a6d24b7aef61bfd98bd6dcb79b1cb7b50dd09fc5
+        uses: JesusCotlamee/upload-tool-results-action@e23c6b90896a6eac35497bfd59efeba5cc8010fb
         with:
           tool: 'sonar'
           pr-number: ${{ github.event.inputs.pr-number }}
