@@ -7,6 +7,7 @@ on:
 permissions:
   id-token: write
 
+
 jobs:
   pixeebot-fix:
     name: Pixeebot Fix
@@ -15,12 +16,8 @@ jobs:
     timeout-minutes: 6
 
     steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Upload file and trigger analysis
-        uses: JesusCotlamee/upload-tool-results-action@07a17fdddc0f32b784e5fe28bae122022dbc74c9
+        uses: JesusCotlamee/upload-tool-results-action@fc15d5df948049a1310331c4668d3b1b997d70aa
         with:
           tool: 'sonar'
-      - name: Analysis sha
-        shell: bash
-        run: |
-          ANALYSIS_SHA=${{ github.event.check_run.head_sha }}
-          echo "$ANALYSIS_SHA"
