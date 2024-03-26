@@ -4,6 +4,9 @@ import java.security.SecureRandom;
 import java.util.Random;
 
 public class PasswordGenerator {
+    private PasswordGenerator() {
+    }
+    
     private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+";
 
     public static String generatePassword(int length) {
