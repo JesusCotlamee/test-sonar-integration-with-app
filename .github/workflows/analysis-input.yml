@@ -18,6 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Upload file and trigger analysis
-        uses: JesusCotlamee/upload-tool-results-action@12a3ab2b86ea56da8dc533a5e5e94cd010214e02
+        uses: pixee/upload-tool-results-action@76baca054328a3f414dd3300decc4a1cb5c87fd5
         with:
           tool: 'sonar'
