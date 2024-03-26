@@ -9,14 +9,14 @@ permissions:
 
 jobs:
   pixeebot-fix:
-    name: Pixeebot Fix Pull Request
+    name: Pixeebot Fix Workflow Dispatch
     runs-on: ubuntu-latest
     timeout-minutes: 6
 
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Upload file and trigger analysis
-        uses: JesusCotlamee/upload-tool-results-action@d881431dcaf10986ca6f03f7e299f7a9eb0ce741
+        uses: JesusCotlamee/upload-tool-results-action@022d886161ccbd08a31b0d0f2bf9431285697ee4
         with:
           tool: 'sonar'
           file: pixeebot-fix-files/sonar
