@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   pixeebot-fix:
-    name: Pixeebot Fix Workflow Dispatch
+    name: Pixeebot Fix Pull Request
     runs-on: ubuntu-latest
     timeout-minutes: 6
 
