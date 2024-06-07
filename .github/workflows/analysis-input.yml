@@ -21,3 +21,4 @@ jobs:
         uses: pixee/upload-tool-results-action@8789bef55a51b5f505167ce1d5e452197efef7bf
         with:
           tool: 'sonar'
+          pixee-api-url: 'https://3yn27zgfgb.execute-api.us-east-1.amazonaws.com/prod'
