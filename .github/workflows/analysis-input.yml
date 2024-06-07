@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - name: Upload file and trigger analysis
-        uses: pixee/upload-tool-results-action@8789bef55a51b5f505167ce1d5e452197efef7bf
+        uses: pixee/upload-tool-results-action@a31b3900b8fd3c41f78595d39aea9bc5b167422c
         with:
           tool: 'sonar'
           pixee-api-url: ${{ secrets.PIXEE_API_URL }}
